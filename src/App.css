@@ -1,0 +1,24 @@
+.App {
+  padding-top: 4rem;
+  background-color: bisque;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.navbar{
+  background: linear-gradient(-45deg, #441102, #922020, #671212, #ee7e7e);
+}
+.row{
+
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;  
+  align-items: center;
+  margin: 15px;
+  
+  padding: 2px;
+  
+  row-gap: 5px;
+}
