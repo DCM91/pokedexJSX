@@ -29,7 +29,7 @@ export default class PokeId extends Component {
     return (
       <div className="col-md-3 col-sm-6 mb-3">
         <div className='card'>
-          <h2>{this.state.index}</h2>
+          <h3>Nº - {this.state.index}</h3>
           <img src= {this.state.imageUrl} alt='' />
           
             <div className='cardHeader'>

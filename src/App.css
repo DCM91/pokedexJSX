@@ -18,7 +18,8 @@
   align-items: center;
   margin: 15px;
   
-  padding: 2px;
+  padding: 25px;
+  padding-top: 7rem;
   
   row-gap: 5px;
 }
