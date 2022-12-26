@@ -2,9 +2,29 @@
     padding: 0.5px 5px;
     text-align: center;
     border-radius: 5%;
+    box-shadow: 0 3px 5px #312f30;
+    background-color: #312f30;
+    color: #f2f2f2;
+    
+}
+h3{
+    background-color: #f2f2f2;
+    border-radius: 5%;
+    box-shadow: 1px 1px 1px 1px;
+    width: 80%;
+    margin-top: .4rem ;
+    color: #fda038 ;
+    margin-right: 10%;
+    margin-left: 10%;
+    
 }
 img{
-
+    margin-right: 12rem;
     width: 4em;
     height: 4em;
+    border-radius: 50%;
+    box-shadow: 2px 2px 1px 1px #fda038;
+    margin-top: .2rem ;
+    background-color: #f2f2f2;
+    margin-left: 5%;
 }

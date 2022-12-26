@@ -10,9 +10,9 @@ export default class PokeList extends Component {
 
   async componentDidMount() {
     const res = await axios.get(this.state.url);
-
     this.setState({ pokemon: res.data["results"] });
   }
+ 
 
   render() {
     return (
@@ -24,6 +24,7 @@ export default class PokeList extends Component {
                 key={pokemon.name}
                 name={pokemon.name}
                 url={pokemon.url}
+                //type={pokemon.types[0].type.name}
               />
             ))}
           </div>

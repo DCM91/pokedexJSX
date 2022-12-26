@@ -1,6 +1,6 @@
 .App {
   padding-top: 4rem;
-  background-color: bisque;
+  background-color: #fda038;
   min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
@@ -8,7 +8,9 @@
 }
 
 .navbar{
-  background: linear-gradient(-45deg, #441102, #922020, #671212, #ee7e7e);
+  background: linear-gradient(-45deg, #441102, #ec563d, #671212, #ec563d);
+  color: #f2f2f2;
+  
 }
 .row{
 
