@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon";
 
-export const Generation2 = () => {
+export const Generation1 = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     async function getPokemons() {
-      for (let i = 152; i < 252; i++) {
+      for (let i = 1; i < 152; i++) {
         const response = await axios.get(`${API_URL}/${i}`);
         const pokemon = {
           id: response.data.id,

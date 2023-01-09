@@ -3,8 +3,15 @@ import Burger from "./component/Burger";
 import styled from "styled-components";
 import { Route, Routes, Link } from "react-router-dom";
 import { Contact } from "../MyRoutes/contact/Contact";
+import { Generation8 } from "../MyRoutes/contact/Generation/Generation8";
+import { Generation7 } from "../MyRoutes/contact/Generation/Generation7";
+import { Generation6 } from "../MyRoutes/contact/Generation/Generation6";
+import { Generation5 } from "../MyRoutes/contact/Generation/Generation5";
+import { Generation4 } from "../MyRoutes/contact/Generation/Generation4";
+import { Generation3 } from "../MyRoutes/contact/Generation/Generation3";
 import { Generation2 } from "../MyRoutes/contact/Generation/Generation2";
-
+import { Generation1 } from "../MyRoutes/contact/Generation/Generation1";
+import { Dropdown, DropdownButton, Button } from 'react-bootstrap'; 
 
 
 export default function NavBar(props) {
@@ -15,26 +22,66 @@ export default function NavBar(props) {
       <div>
         <NavStyle>
           <nav className="navbar navbar-dark fixed-top">
+          
           <Link to="/"><img alt="../img/Pokédex_logo.png" src={require("../img/Pokédex_logo.png")}/></Link>
             
             <div className="burger">
               <Burger clicked={clicked} handleClick={handleClick}/>
-            </div>
+            </div >
             <div className={`navlink ${clicked ? 'active' : ''}`}>
-              <span href="/">
-                <Link to="/Generation2">Generation2</Link>
-              </span>
-              <span href="/">
-                <Link to="/Contact">Contact</Link>
-              </span>
-              <span href="/">Search</span>
+              <div className="navComponents">
+                <div className="buttonB">
+                  <DropdownButton id="dropdown-menu" title="Generation">
+                  <Dropdown.Item>
+                      <Link to="/" >Generation1</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation2" >Generation2</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation3" >Generation3</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation4" >Generation4</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation5" >Generation5</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation6" >Generation6</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation7" >Generation7</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Link to="/Generation8" >Generation8</Link>
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </div>
+                <div className="buttonB">
+                  <Button href="/Contact" >
+                    <Link to="/Contact" >Contact</Link>
+                  </Button>
+                </div>
+                <div className="buttonB">
+                  <Button href="/">Search</Button>
+                </div>
+              </div>
             </div>
-
           </nav>
+
           <div>
             <Routes>
-              <Route path="Generation2" element={<Generation2 />} />
-              <Route path="Contact" element={<Contact />} />
+              <Route path="/" element={<Generation1 />} />
+              <Route path="/Generation2" element={<Generation2 />} />
+              <Route path="/Generation3" element={<Generation3 />} />
+              <Route path="/Generation4" element={<Generation4 />} />
+              <Route path="/Generation5" element={<Generation5 />} />
+              <Route path="/Generation6" element={<Generation6 />} />
+              <Route path="/Generation7" element={<Generation7 />} />
+              <Route path="/Generation8" element={<Generation8 />} />
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="*" element={<Generation1 />} />
             </Routes>
           </div>
         </NavStyle>
@@ -44,38 +91,47 @@ export default function NavBar(props) {
 
 const NavStyle = styled.nav`
 
-@font-face {
-  font-family:"Pokemon Solid Normal"; 
-  src:  url("pokemonsolid.eot?") format("eot"),
-        url("pokemonsolid.woff") format("woff"),
-        url("pokemonsolid.ttf") format("truetype"),
-        url("pokemonsolid.svg#PokemonSolidNormal") format("svg");
-}
-
 .navbar{
   color: #fff;
   display: flex;
-  padding: 1rem 3rem;
-  
+  padding: .2rem 1rem;
   font-weight: bold;
   align-items: center;  
+  position: fixed;
 }
-span{
-  margin-right: 1rem;
+
+.navComponents{
+  display: flex;
+  flex-direction: row;
+  vertical-align: baseline;
   justify-content: space-between;
-  color: #fff;
+  position: relative ;
+ 
+}
+
+.buttonB{
+  display: inline-flex;
+  width: 6.5rem;
+  justify-content: space-between;
+  height: 2.2rem;
+  margin: 2rem;
+  margin-right: 4rem;
+  padding-right: 2rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+a{
   text-decoration: none;
-  justify-items: flex-end;
+  border: #242635;
   
-}
+  color: #242635;
 
-/*
-Link{
-  text-decoration: none;
-  color: #fff;
 }
-*/
-
+button{
+  border: solid #242635;
+  color: #242635;
+  background-color: #f79f1a;
+}
 
 img{
   width: 6.8rem;
@@ -86,14 +142,7 @@ img{
   background-color: transparent;
   margin-right: .1rem
 }
-h2{
- justify-content: flex-start;
-  color: yellowgreen;
-  padding-left: 1rem;
-  font-family: "Pokemon Solid Normal", woff;
-  font-weight: bold;
-  
-}
+
 
 
 .navlink{
@@ -103,28 +152,47 @@ h2{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  span{
-    display: block;
+  .navComponents{
+    display: flex;
+    flex-direction: column;
+    width: 7rem;
+    justify-content: space-around;
+  }
+  .buttonB{
+    margin: .2rem;
   }
 
   @media(min-width: 750px){
     position: initial;
     margin: 0;
-    span{
+    
+    .navComponents{
       display: inline;
-
+      
+      justify-content: space-around;
+    }
+    .buttonB{
+    margin: 1rem;
+    margin-bottom: 1.2rem;
+    }
+    .dropdown{
+      right: 2.2rem;
+      width: 10rem;
+      height: 2.2rem;
+      bottom: .2rem;
+      
     }
   }
 }
 .navlink.active{
   width: 100%;
-  display: block;
+  display: flexbox;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  top: 30%;
-  left: 0;
-  right: 0;
+  top: 40%;
+  left: 40%;
+  right: 40%;
   text-align: center;
 }
 
