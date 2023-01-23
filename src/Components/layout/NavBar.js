@@ -60,8 +60,8 @@ export default function NavBar(props) {
                   </DropdownButton>
                 </div>
                 <div className="buttonB">
-                  <Button href="/Contact" >
-                    <Link to="/Contact" >Contact</Link>
+                  <Button as={Link} to="/Contact" >
+                    Contact
                   </Button>
                 </div>
                 <div className="buttonB">
