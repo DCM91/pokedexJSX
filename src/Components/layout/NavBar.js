@@ -3,6 +3,7 @@ import Burger from "./component/Burger";
 import styled from "styled-components";
 import { Route, Routes, Link } from "react-router-dom";
 import { Contact } from "../MyRoutes/contact/Contact";
+import { Search } from "../MyRoutes/contact/Search";
 import { Generation8 } from "../MyRoutes/contact/Generation/Generation8";
 import { Generation7 } from "../MyRoutes/contact/Generation/Generation7";
 import { Generation6 } from "../MyRoutes/contact/Generation/Generation6";
@@ -64,7 +65,9 @@ export default function NavBar(props) {
                   </Button>
                 </div>
                 <div className="buttonB">
-                  <Button href="/">Search</Button>
+                  <Button as={Link} to="/Search" >
+                    Search
+                  </Button>
                 </div>
               </div>
             </div>
@@ -81,6 +84,7 @@ export default function NavBar(props) {
               <Route path="/Generation7" element={<Generation7 />} />
               <Route path="/Generation8" element={<Generation8 />} />
               <Route path="/Contact" element={<Contact />} />
+              <Route path="/Search" element={<Search />} />
               <Route path="*" element={<Generation1 />} />
             </Routes>
           </div>

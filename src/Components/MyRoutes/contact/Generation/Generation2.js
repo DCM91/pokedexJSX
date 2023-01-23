@@ -28,7 +28,7 @@ export const Generation2 = () => {
     <GenStyle>
       <div className="row">
         {pokemons.map((pokemon) => (
-          <div className="card" key={pokemon.id}>
+          <div className="card" key={pokemon.id + pokemon.name}>
             <h4>Nº {pokemon.index}</h4>
             <div className="mid">
               <img src={pokemon.imageUrl} alt={pokemon.name} className="pokePhoto" />
